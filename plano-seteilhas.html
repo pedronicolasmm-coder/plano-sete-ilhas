@@ -1,0 +1,1162 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Plano de Ação | Hotel Sete Ilhas × Pedro Munareto</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Lato:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --gold:       #C4A040;
+  --gold-light: #D4B050;
+  --gold-pale:  #E8CC80;
+  --gold-nav:   #C4A040;
+  --navy:       #1A2A3A;
+  --navy-mid:   #243448;
+  --white:      #FFFFFF;
+  --off-white:  #FAFAF7;
+  --cream:      #F5F0E4;
+  --dark:       #1A1610;
+  --mid:        #5A5040;
+  --light:      #9A8A70;
+  --border:     #E0D4B0;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--white);
+  color: var(--dark);
+  font-family: 'Lato', sans-serif;
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 1.8;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* NAV */
+.nav {
+  background: var(--gold-nav);
+  padding: 0 64px;
+  height: 72px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+.nav-logo {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: var(--white);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+.nav-logo span { color: rgba(255,255,255,0.6); }
+.nav-logo sub {
+  display: block;
+  font-family: 'Lato', sans-serif;
+  font-size: 0.42rem;
+  font-weight: 400;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.55);
+  margin-top: 1px;
+}
+.nav-right {
+  font-size: 0.65rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.55);
+}
+
+/* HERO */
+.hero {
+  background: var(--navy);
+  min-height: 88vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 80px 60px;
+  position: relative;
+  overflow: hidden;
+}
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 70% 60% at 50% 80%, rgba(196,160,64,0.12) 0%, transparent 65%);
+  pointer-events: none;
+}
+.hero-eyebrow {
+  font-size: 0.7rem;
+  letter-spacing: 0.42em;
+  text-transform: uppercase;
+  color: var(--gold-light);
+  margin-bottom: 24px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.hero-eyebrow::before,
+.hero-eyebrow::after {
+  content: '';
+  width: 32px;
+  height: 1px;
+  background: var(--gold-pale);
+}
+.hero h1 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(2.4rem, 5vw, 4rem);
+  font-weight: 400;
+  color: var(--white);
+  line-height: 1.1;
+  margin-bottom: 20px;
+  letter-spacing: 0.04em;
+}
+.hero h1 em {
+  font-style: italic;
+  color: var(--gold-light);
+}
+.hero-sub {
+  font-size: 1.05rem;
+  color: rgba(255,255,255,0.5);
+  max-width: 520px;
+  line-height: 1.8;
+  margin-bottom: 56px;
+}
+.hero-divider {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 56px;
+}
+.hero-divider::before,
+.hero-divider::after {
+  content: '';
+  width: 48px;
+  height: 1px;
+  background: rgba(196,160,64,0.4);
+}
+.hero-divider span { color: var(--gold); font-size: 0.8rem; }
+
+/* STATS */
+.stats-row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0;
+  border-top: 1px solid rgba(196,160,64,0.15);
+  padding-top: 48px;
+  width: 100%;
+  max-width: 800px;
+  position: relative;
+  z-index: 1;
+}
+.stat { text-align: center; padding: 0 24px; border-right: 1px solid rgba(196,160,64,0.15); }
+.stat:last-child { border-right: none; }
+.stat-val {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2.4rem;
+  font-weight: 400;
+  color: var(--gold);
+  display: block;
+  line-height: 1;
+}
+.stat-label {
+  font-size: 0.65rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.3);
+  margin-top: 6px;
+  display: block;
+}
+
+/* DIAGNOSTICO */
+.diag {
+  background: var(--cream);
+  padding: 80px 60px;
+  border-bottom: 1px solid var(--border);
+}
+.diag-inner { max-width: 1100px; margin: 0 auto; }
+.section-eyebrow {
+  font-size: 0.65rem;
+  letter-spacing: 0.38em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.section-eyebrow::before {
+  content: '';
+  width: 20px;
+  height: 1px;
+  background: var(--gold-pale);
+}
+.section-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(1.7rem, 3.5vw, 2.6rem);
+  font-weight: 400;
+  color: var(--dark);
+  line-height: 1.15;
+  margin-bottom: 48px;
+}
+.section-title em { font-style: italic; color: var(--gold); }
+
+.diag-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 16px;
+}
+.diag-card {
+  background: var(--white);
+  padding: 40px 36px;
+  border: 1px solid var(--border);
+  border-top: 3px solid var(--gold);
+}
+.diag-card h3 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--dark);
+  margin-bottom: 10px;
+}
+.diag-card p {
+  font-size: 0.95rem;
+  color: var(--mid);
+  line-height: 1.85;
+}
+.diag-opp {
+  background: var(--navy);
+  border-top-color: var(--gold);
+}
+.diag-opp h3 { color: var(--white); }
+.diag-opp p { color: rgba(255,255,255,0.55); }
+
+/* PLANO 30 DIAS */
+.plano {
+  background: var(--white);
+  padding: 80px 60px;
+}
+.plano-inner { max-width: 1100px; margin: 0 auto; }
+.timeline {
+  margin-top: 48px;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+.week {
+  display: grid;
+  grid-template-columns: 120px 1fr;
+  gap: 0;
+  border-bottom: 1px solid var(--border);
+}
+.week:first-child { border-top: 1px solid var(--border); }
+.week-label {
+  background: var(--navy);
+  padding: 28px 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  border-right: 3px solid var(--gold);
+}
+.week-num {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2rem;
+  font-weight: 400;
+  color: var(--gold);
+  line-height: 1;
+  display: block;
+}
+.week-sub {
+  font-size: 0.6rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.4);
+  margin-top: 4px;
+  display: block;
+}
+.week-content {
+  padding: 36px 40px;
+}
+.week-content h4 {
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: var(--dark);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+.week-content ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.week-content ul li {
+  font-size: 0.8rem;
+  color: var(--mid);
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+}
+.week-content ul li::before {
+  content: '→';
+  color: var(--gold);
+  flex-shrink: 0;
+  font-size: 0.75rem;
+  margin-top: 1px;
+}
+
+/* ENTREGAVEIS */
+.entrega {
+  background: var(--navy);
+  padding: 80px 60px;
+}
+.entrega-inner { max-width: 1100px; margin: 0 auto; }
+.entrega .section-title { color: var(--white); }
+.entrega .section-title em { color: var(--gold-light); }
+.entrega .section-eyebrow { color: var(--gold-light); }
+.entrega .section-eyebrow::before { background: rgba(196,160,64,0.4); }
+
+.entrega-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2px;
+  background: rgba(255,255,255,0.05);
+  margin-top: 48px;
+}
+.entrega-item {
+  background: rgba(255,255,255,0.04);
+  padding: 40px 36px;
+  border: 1px solid rgba(196,160,64,0.1);
+}
+.entrega-icon { font-size: 1.6rem; margin-bottom: 14px; display: block; }
+.entrega-item h4 {
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: var(--white);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+.entrega-item ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.entrega-item ul li {
+  font-size: 0.88rem;
+  color: rgba(255,255,255,0.6);
+  display: flex;
+  gap: 8px;
+  align-items: flex-start;
+}
+.entrega-item ul li::before {
+  content: '✓';
+  color: var(--gold);
+  flex-shrink: 0;
+  font-size: 0.65rem;
+}
+
+/* PLANOS */
+.planos-section {
+  background: var(--cream);
+  padding: 80px 60px;
+}
+.planos-inner { max-width: 1100px; margin: 0 auto; }
+.planos-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-top: 48px;
+}
+.plano-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  overflow: hidden;
+  position: relative;
+}
+.plano-card.featured {
+  border-color: var(--gold);
+  transform: translateY(-8px);
+  box-shadow: 0 20px 60px rgba(196,160,64,0.15);
+}
+.plano-header {
+  background: var(--navy);
+  padding: 40px 36px;
+  text-align: center;
+}
+.plano-card.featured .plano-header { background: var(--gold); }
+.plano-tag {
+  font-size: 0.65rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.6);
+  margin-bottom: 8px;
+  display: block;
+}
+.plano-card.featured .plano-tag { color: rgba(26,22,16,0.6); }
+.plano-name {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2rem;
+  font-weight: 400;
+  color: var(--white);
+  letter-spacing: 0.06em;
+  display: block;
+  margin-bottom: 20px;
+}
+.plano-card.featured .plano-name { color: var(--dark); }
+.plano-price {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 3.5rem;
+  font-weight: 400;
+  color: var(--gold-pale);
+  line-height: 1;
+  display: block;
+}
+.plano-card.featured .plano-price { color: var(--dark); }
+.plano-price-label {
+  font-size: 0.65rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.4);
+  display: block;
+  margin-top: 6px;
+}
+.plano-card.featured .plano-price-label { color: rgba(26,22,16,0.5); }
+.plano-body {
+  padding: 40px 36px;
+}
+.plano-body ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 28px;
+}
+.plano-body ul li {
+  font-size: 0.9rem;
+  color: var(--mid);
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--border);
+}
+.plano-body ul li:last-child { border-bottom: none; }
+.plano-body ul li::before {
+  content: '✓';
+  color: var(--gold);
+  flex-shrink: 0;
+  font-weight: 700;
+}
+.plano-note {
+  font-size: 0.75rem;
+  color: var(--light);
+  font-style: italic;
+  text-align: center;
+  padding: 0 0 8px;
+}
+.featured-badge {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background: var(--navy);
+  color: var(--gold);
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  padding: 4px 10px;
+}
+
+/* ROI */
+.roi {
+  background: var(--white);
+  padding: 80px 60px;
+  border-top: 1px solid var(--border);
+}
+.roi-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+.roi-left .section-title { margin-bottom: 24px; }
+.roi-left p {
+  font-size: 0.95rem;
+  color: var(--mid);
+  line-height: 1.85;
+  margin-bottom: 16px;
+}
+.roi-numbers {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.roi-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 24px;
+  background: var(--cream);
+  border-left: 3px solid var(--gold);
+}
+.roi-row:nth-child(even) { background: var(--white); border-color: var(--navy); }
+.roi-row-label { font-size: 0.92rem; color: var(--mid); }
+.roi-row-val { font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; font-weight: 400; color: var(--gold); }
+.roi-row.total { background: var(--navy); }
+.roi-row.total .roi-row-label { color: rgba(255,255,255,0.6); font-weight: 600; }
+.roi-row.total .roi-row-val { color: var(--gold-light); font-size: 1.8rem; }
+
+/* PROOF */
+.proof {
+  background: var(--navy);
+  padding: 60px;
+  border-top: 3px solid var(--gold);
+}
+.proof-inner {
+  max-width: 900px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2px;
+  background: rgba(255,255,255,0.04);
+}
+.proof-box {
+  background: rgba(0,0,0,0.15);
+  padding: 52px 40px;
+  text-align: center;
+}
+.proof-val {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 4.5rem;
+  font-weight: 400;
+  color: var(--gold);
+  display: block;
+  line-height: 1;
+}
+.proof-label {
+  font-size: 0.65rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.35);
+  margin-top: 8px;
+  display: block;
+}
+.proof-msg {
+  padding: 40px 40px;
+  background: rgba(0,0,0,0.1);
+  display: flex;
+  align-items: center;
+  grid-column: span 2;
+}
+.proof-msg p {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.25rem;
+  font-style: italic;
+  color: rgba(255,255,255,0.75);
+  font-size: 17px;
+  line-height: 1.8;
+  text-align: center;
+  width: 100%;
+}
+
+/* CTA */
+.cta {
+  background: var(--gold);
+  padding: 80px 60px;
+  text-align: center;
+}
+.cta-inner { max-width: 480px; margin: 0 auto; }
+.cta-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(1.6rem, 3vw, 2.4rem);
+  font-weight: 400;
+  color: var(--dark);
+  line-height: 1.2;
+  margin-bottom: 16px;
+}
+.cta-body {
+  font-size: 0.95rem;
+  color: rgba(26,22,16,0.65);
+  line-height: 1.75;
+  margin-bottom: 36px;
+}
+.cta-btn {
+  display: inline-block;
+  background: var(--navy);
+  color: var(--white);
+  font-family: 'Lato', sans-serif;
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  padding: 18px 52px;
+  text-decoration: none;
+  transition: background 0.25s;
+}
+.cta-btn:hover { background: var(--dark); }
+.cta-note {
+  margin-top: 16px;
+  font-size: 0.65rem;
+  color: rgba(26,22,16,0.4);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+/* FOOTER */
+footer {
+  background: var(--dark);
+  padding: 24px 64px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.f-l { font-size: 0.7rem; color: rgba(255,255,255,0.2); letter-spacing: 0.1em; }
+.f-l span { color: var(--gold-light); opacity: 0.65; }
+.f-r { font-size: 0.52rem; color: rgba(255,255,255,0.12); }
+
+@media (max-width: 860px) {
+  .nav { padding: 0 24px; }
+  .hero { padding: 64px 24px; min-height: auto; }
+  .stats-row { grid-template-columns: 1fr 1fr; gap: 24px; }
+  .stat { border-right: none; }
+  .diag { padding: 60px 24px; }
+  .diag-grid { grid-template-columns: 1fr; }
+  .plano { padding: 60px 24px; }
+  .week { grid-template-columns: 80px 1fr; }
+  .entrega { padding: 60px 24px; }
+  .entrega-grid { grid-template-columns: 1fr; }
+  .planos-section { padding: 60px 24px; }
+  .planos-grid { grid-template-columns: 1fr; }
+  .plano-card.featured { transform: none; }
+  .roi { padding: 60px 24px; }
+  .roi-inner { grid-template-columns: 1fr; gap: 40px; }
+  .proof { padding: 40px 24px; }
+  .proof-inner { grid-template-columns: 1fr; }
+  .proof-msg { grid-column: span 1; }
+  .cta { padding: 72px 24px; }
+  footer { padding: 20px 24px; flex-direction: column; gap: 8px; text-align: center; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <div>
+    <div class="nav-logo">SETE<span>•</span>ILHAS
+      <sub>Jurerê Internacional · Florianópolis</sub>
+    </div>
+  </div>
+  <div class="nav-right">Plano de Ação · Pedro Munareto</div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-eyebrow">Proposta Personalizada · Hotel Sete Ilhas</div>
+  <h1>
+    Estratégia de Marketing Digital<br>
+    <em>para aumentar o faturamento<br>na média temporada</em>
+  </h1>
+  <p class="hero-sub">
+    Com base na conversa de hoje, este plano foi desenvolvido especificamente para o Sete Ilhas: 40 anos de história, 88% de ocupação no verão e potencial real de crescimento na média temporada.
+  </p>
+  <div class="hero-divider"><span>✦</span></div>
+
+  <div class="stats-row">
+    <div class="stat">
+      <span class="stat-val">40</span>
+      <span class="stat-label">Anos de história</span>
+    </div>
+    <div class="stat">
+      <span class="stat-val">88%</span>
+      <span class="stat-label">Ocupação no verão</span>
+    </div>
+    <div class="stat">
+      <span class="stat-val">9,4</span>
+      <span class="stat-label">Nota no Booking</span>
+    </div>
+    <div class="stat">
+      <span class="stat-val">17,5k</span>
+      <span class="stat-label">Seguidores Instagram</span>
+    </div>
+  </div>
+</section>
+
+<!-- DIAGNÓSTICO -->
+<div class="diag">
+  <div class="diag-inner">
+    <div class="section-eyebrow">O que foi identificado</div>
+    <h2 class="section-title">Três pontos que estão limitando<br><em>o faturamento atual</em></h2>
+
+    <div class="diag-grid">
+      <div class="diag-card">
+        <h3>Orgânico e pago não conversam</h3>
+        <p>O investimento de R$3.000/mês em tráfego existe, mas o feed orgânico não sustenta o que o anúncio promete. Quando o usuário clica no anúncio e vai ao perfil, não encontra consistência. Isso derruba a conversão.</p>
+      </div>
+      <div class="diag-card">
+        <h3>As Casas do Recanto sem campanha própria</h3>
+        <p>O produto de maior ticket do hotel não tem estratégia de conteúdo nem campanha específica. Famílias de 6 a 8 pessoas não se sentem representadas no feed atual e não têm um caminho claro para reservar esse produto.</p>
+      </div>
+      <div class="diag-card">
+        <h3>Restaurante misturado ao hotel</h3>
+        <p>Dois públicos diferentes no mesmo perfil dilui os dois. Quem quer jantar no bistrô e quem quer se hospedar têm jornadas de decisão completamente diferentes. Separar os perfis dobra o alcance com o mesmo esforço.</p>
+      </div>
+      <div class="diag-card diag-opp">
+        <h3>Queda de 30% na demanda geral</h3>
+        <p>O mercado está mais competitivo com nordeste atraindo turistas do sul. A resposta não é esperar a demanda voltar. É capturar uma fatia maior do público que ainda viaja para Floripa, especialmente na média temporada.</p>
+      </div>
+      <div class="diag-card diag-opp">
+        <h3>Pacotes de experiência subexplorados</h3>
+        <p>Semana Farroupilha, massagem, transfer, aluguel de carro. Esses extras existem mas não estão sendo vendidos como pacote. Hóspede que compra experiência gasta mais e tem ticket médio até 40% maior.</p>
+      </div>
+      <div class="diag-card diag-opp">
+        <h3>Público de Balneário Camboriú inexplorado</h3>
+        <p>Quem pesquisa hotel em Balneário frequentemente considera Jurerê. São públicos com perfil semelhante e alta renda. Uma campanha segmentada para esse público pode preencher a média temporada com hóspedes de alto valor.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- PLANO 30 DIAS -->
+<div class="plano">
+  <div class="plano-inner">
+    <div class="section-eyebrow">Os primeiros 30 dias</div>
+    <h2 class="section-title">Plano de ação semana<br><em>a semana</em></h2>
+
+    <div class="timeline">
+      <div class="week">
+        <div class="week-label">
+          <span class="week-num">01</span>
+          <span class="week-sub">Semana</span>
+        </div>
+        <div class="week-content">
+          <h4>Estruturação e base</h4>
+          <ul>
+            <li>Auditoria completa do perfil @seteilhas e definição da linha editorial</li>
+            <li>Criação da identidade visual do feed com foco em famílias e Casas do Recanto</li>
+            <li>Separação da estratégia do restaurante: perfil próprio ou linha de conteúdo separada</li>
+            <li>Levantamento de criativos: fotos, vídeos e depoimentos disponíveis</li>
+            <li>Configuração e auditoria da conta de anúncios no Meta Ads</li>
+          </ul>
+        </div>
+      </div>
+      <div class="week">
+        <div class="week-label">
+          <span class="week-num">02</span>
+          <span class="week-sub">Semana</span>
+        </div>
+        <div class="week-content">
+          <h4>Conteúdo e primeiros anúncios</h4>
+          <ul>
+            <li>Publicação dos primeiros Reels com narrativa de experiência: pôr do sol, piscina, café da manhã</li>
+            <li>Lançamento de campanha específica para as Casas do Recanto segmentada para famílias de SC e RS</li>
+            <li>Início de campanha para público de Balneário Camboriú e Joinville</li>
+            <li>Criação de conteúdo de bastidores do restaurante bistrô</li>
+            <li>Implementação de resposta ativa a todos os comentários e DMs</li>
+          </ul>
+        </div>
+      </div>
+      <div class="week">
+        <div class="week-label">
+          <span class="week-num">03</span>
+          <span class="week-sub">Semana</span>
+        </div>
+        <div class="week-content">
+          <h4>Otimização e escala</h4>
+          <ul>
+            <li>Análise dos primeiros resultados de campanha e otimização de público e criativos</li>
+            <li>Lançamento de campanha de pacote de experiência: hospedagem + massagem + transfer</li>
+            <li>Conteúdo de Semana Farroupilha com antecedência para capturar reservas antecipadas</li>
+            <li>Reels mostrando hóspedes reais com autorização, famílias nas Casas</li>
+            <li>Início de campanha no Google Ads para buscas de hotel em Jurerê e Florianópolis</li>
+          </ul>
+        </div>
+      </div>
+      <div class="week">
+        <div class="week-label">
+          <span class="week-num">04</span>
+          <span class="week-sub">Semana</span>
+        </div>
+        <div class="week-content">
+          <h4>Consolidação e relatório</h4>
+          <ul>
+            <li>Relatório completo de resultados: alcance, engajamento, cliques e reservas geradas</li>
+            <li>Apresentação de resultados e ajuste de estratégia para o mês 2</li>
+            <li>Consolidação da linha editorial com calendário de conteúdo para os próximos 30 dias</li>
+            <li>Expansão de campanhas para o TikTok com conteúdo de experiência em Jurerê</li>
+            <li>Análise de performance por acomodação para ajustar foco de campanha</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ENTREGÁVEIS -->
+<div class="entrega">
+  <div class="entrega-inner">
+    <div class="section-eyebrow">O que está incluído</div>
+    <h2 class="section-title">Tudo que será entregue<br><em>todo mês</em></h2>
+
+    <div class="entrega-grid">
+      <div class="entrega-item">
+        <span class="entrega-icon">📱</span>
+        <h4>Gestão de Instagram</h4>
+        <ul>
+          <li>Planejamento editorial mensal</li>
+          <li>Criação de Reels, carrosséis e stories</li>
+          <li>Identidade visual consistente</li>
+          <li>Resposta a comentários e DMs</li>
+          <li>Hashtags estratégicas</li>
+          <li>Relatório mensal de desempenho</li>
+        </ul>
+      </div>
+      <div class="entrega-item">
+        <span class="entrega-icon">🎵</span>
+        <h4>TikTok e YouTube</h4>
+        <ul>
+          <li>Adaptação de conteúdo para TikTok</li>
+          <li>Reels reutilizados como Shorts no YouTube</li>
+          <li>Conteúdo de destino: Jurerê e Floripa</li>
+          <li>Tendências e áudios em alta</li>
+          <li>Otimização de descrição e tags</li>
+        </ul>
+      </div>
+      <div class="entrega-item">
+        <span class="entrega-icon">🎯</span>
+        <h4>Tráfego Pago Meta Ads</h4>
+        <ul>
+          <li>Gestão completa da conta de anúncios</li>
+          <li>Campanhas por produto: Casas, Suítes, Studios</li>
+          <li>Segmentação por público e região</li>
+          <li>Criação de criativos para anúncio</li>
+          <li>Otimização semanal de campanhas</li>
+          <li>Relatório de ROAS e conversões</li>
+        </ul>
+      </div>
+      <div class="entrega-item">
+        <span class="entrega-icon">🔍</span>
+        <h4>Google Ads</h4>
+        <ul>
+          <li>Campanhas de pesquisa para hotel em Jurerê</li>
+          <li>Campanhas de display em rede parceira</li>
+          <li>Remarketing para visitantes do site</li>
+          <li>Otimização de palavras-chave</li>
+          <li>Integração com Google Analytics</li>
+        </ul>
+      </div>
+      <div class="entrega-item">
+        <span class="entrega-icon">📊</span>
+        <h4>Estratégia e Consultoria</h4>
+        <ul>
+          <li>Reunião mensal de alinhamento</li>
+          <li>Planejamento de alta e média temporada</li>
+          <li>Estratégia de pacotes e experiências</li>
+          <li>Separação de estratégia hotel e restaurante</li>
+          <li>Análise de concorrência mensal</li>
+        </ul>
+      </div>
+      <div class="entrega-item">
+        <span class="entrega-icon">📈</span>
+        <h4>Relatórios e Resultados</h4>
+        <ul>
+          <li>Relatório semanal de campanhas pagas</li>
+          <li>Relatório mensal completo</li>
+          <li>Dashboard de métricas em tempo real</li>
+          <li>Análise de reservas geradas por canal</li>
+          <li>Projeção de resultado para mês seguinte</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- PLANOS -->
+<div class="planos-section">
+  <div class="planos-inner">
+    <div class="section-eyebrow">Investimento</div>
+    <h2 class="section-title">Escolha o plano ideal<br><em>para o Sete Ilhas</em></h2>
+
+    <div class="planos-grid">
+<style>
+.tab-btns {
+  display: flex;
+  justify-content: center;
+  gap: 0;
+  margin-bottom: 52px;
+}
+.tab-btn {
+  padding: 16px 52px;
+  font-family: 'Lato', sans-serif;
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  border: 2px solid var(--gold);
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.tab-btn.active {
+  background: var(--gold);
+  color: var(--dark);
+}
+.tab-btn.inactive {
+  background: transparent;
+  color: var(--gold);
+}
+.tab-pane { display: none; }
+.tab-pane.active { display: grid; grid-template-columns: repeat(3,1fr); gap: 20px; }
+.economia-badge {
+  display: inline-block;
+  background: #2A8A4A;
+  color: #fff;
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  padding: 5px 12px;
+  border-radius: 2px;
+  margin-top: 12px;
+}
+</style>
+
+<div class="tab-btns">
+  <button class="tab-btn active" id="btn3" onclick="showTab('3')">Contrato 3 Meses</button>
+  <button class="tab-btn inactive" id="btn5" onclick="showTab('5')">Contrato 5 Meses</button>
+</div>
+
+<!-- 3 MESES -->
+<div class="tab-pane active" id="pane3">
+  <div class="plano-card">
+    <div class="plano-header">
+      <span class="plano-tag">Plano · 3 Meses</span>
+      <span class="plano-name">Starter</span>
+      <span class="plano-price">R$960</span>
+      <span class="plano-price-label">por mês</span>
+    </div>
+    <div class="plano-body">
+      <ul>
+        <li>Gestão do Instagram</li>
+        <li>12 posts por mês</li>
+        <li>Stories diários</li>
+        <li>Gestão do Meta Ads</li>
+        <li>Relatório mensal</li>
+        <li>Suporte via WhatsApp</li>
+      </ul>
+      <p class="plano-note">Verba de anúncios não inclusa</p>
+    </div>
+  </div>
+
+  <div class="plano-card featured">
+    <span class="featured-badge">Recomendado</span>
+    <div class="plano-header">
+      <span class="plano-tag">Plano · 3 Meses</span>
+      <span class="plano-name">Profissional</span>
+      <span class="plano-price">R$1.800</span>
+      <span class="plano-price-label">por mês</span>
+    </div>
+    <div class="plano-body">
+      <ul>
+        <li>Gestão do Instagram + TikTok</li>
+        <li>20 posts por mês</li>
+        <li>Stories diários + Reels semanais</li>
+        <li>Gestão Meta Ads e Google Ads</li>
+        <li>Estratégia de pacotes e experiências</li>
+        <li>Separação restaurante e hotel</li>
+        <li>Relatório semanal e mensal</li>
+        <li>Reunião mensal de alinhamento</li>
+      </ul>
+      <p class="plano-note">Verba de anúncios não inclusa</p>
+    </div>
+  </div>
+
+  <div class="plano-card">
+    <div class="plano-header">
+      <span class="plano-tag">Plano · 3 Meses</span>
+      <span class="plano-name">Premium</span>
+      <span class="plano-price">R$2.400</span>
+      <span class="plano-price-label">por mês</span>
+    </div>
+    <div class="plano-body">
+      <ul>
+        <li>Gestão Instagram + TikTok + YouTube</li>
+        <li>Posts ilimitados</li>
+        <li>Reels diários</li>
+        <li>Meta Ads + Google Ads + remarketing</li>
+        <li>Estratégia completa por temporada</li>
+        <li>Dois perfis: hotel e restaurante</li>
+        <li>Dashboard em tempo real</li>
+        <li>Reunião quinzenal de alinhamento</li>
+        <li>Prioridade total no atendimento</li>
+      </ul>
+      <p class="plano-note">Verba de anúncios não inclusa</p>
+    </div>
+  </div>
+</div>
+
+<!-- 5 MESES -->
+<div class="tab-pane" id="pane5">
+  <div class="plano-card">
+    <div class="plano-header">
+      <span class="plano-tag">Plano · 5 Meses</span>
+      <span class="plano-name">Starter</span>
+      <span class="plano-price">R$720</span>
+      <span class="plano-price-label">por mês</span>
+    </div>
+    <div class="plano-body">
+      <ul>
+        <li>Gestão do Instagram</li>
+        <li>12 posts por mês</li>
+        <li>Stories diários</li>
+        <li>Gestão do Meta Ads</li>
+        <li>Relatório mensal</li>
+        <li>Suporte via WhatsApp</li>
+      </ul>
+      <span class="economia-badge">Economia de R$1.200</span>
+    </div>
+  </div>
+
+  <div class="plano-card featured">
+    <span class="featured-badge">Recomendado</span>
+    <div class="plano-header">
+      <span class="plano-tag">Plano · 5 Meses</span>
+      <span class="plano-name">Profissional</span>
+      <span class="plano-price">R$1.440</span>
+      <span class="plano-price-label">por mês</span>
+    </div>
+    <div class="plano-body">
+      <ul>
+        <li>Gestão do Instagram + TikTok</li>
+        <li>20 posts por mês</li>
+        <li>Stories diários + Reels semanais</li>
+        <li>Gestão Meta Ads e Google Ads</li>
+        <li>Estratégia de pacotes e experiências</li>
+        <li>Separação restaurante e hotel</li>
+        <li>Relatório semanal e mensal</li>
+        <li>Reunião mensal de alinhamento</li>
+      </ul>
+      <span class="economia-badge">Economia de R$1.800</span>
+    </div>
+  </div>
+
+  <div class="plano-card">
+    <div class="plano-header">
+      <span class="plano-tag">Plano · 5 Meses</span>
+      <span class="plano-name">Premium</span>
+      <span class="plano-price">R$1.920</span>
+      <span class="plano-price-label">por mês</span>
+    </div>
+    <div class="plano-body">
+      <ul>
+        <li>Gestão Instagram + TikTok + YouTube</li>
+        <li>Posts ilimitados</li>
+        <li>Reels diários</li>
+        <li>Meta Ads + Google Ads + remarketing</li>
+        <li>Estratégia completa por temporada</li>
+        <li>Dois perfis: hotel e restaurante</li>
+        <li>Dashboard em tempo real</li>
+        <li>Reunião quinzenal de alinhamento</li>
+        <li>Prioridade total no atendimento</li>
+      </ul>
+      <span class="economia-badge">Economia de R$2.400</span>
+    </div>
+  </div>
+</div>
+
+<script>
+function showTab(tipo) {
+  document.getElementById('pane3').className = 'tab-pane' + (tipo==='3' ? ' active' : '');
+  document.getElementById('pane5').className = 'tab-pane' + (tipo==='5' ? ' active' : '');
+  document.getElementById('btn3').className = 'tab-btn ' + (tipo==='3' ? 'active' : 'inactive');
+  document.getElementById('btn5').className = 'tab-btn ' + (tipo==='5' ? 'active' : 'inactive');
+}
+</script>
+    </div>
+  </div>
+</div>
+
+<!-- ROI -->
+<div class="roi">
+  <div class="roi-inner">
+    <div class="roi-left">
+      <div class="section-eyebrow">O retorno do investimento</div>
+      <h2 class="section-title">Por que isso faz<br><em>sentido financeiro</em></h2>
+      <p>O hotel fatura R$10 milhões por ano. Uma variação de 2% na ocupação da média temporada representa R$200.000 adicionais. O investimento em marketing é uma fração disso.</p>
+      <p>Além disso, cada reserva direta gerada pelo Instagram economiza a comissão do Booking, que fica entre 15% e 20% por reserva.</p>
+    </div>
+    <div class="roi-numbers">
+      <div class="roi-row">
+        <span class="roi-row-label">Faturamento anual atual</span>
+        <span class="roi-row-val">R$10.000.000</span>
+      </div>
+      <div class="roi-row">
+        <span class="roi-row-label">Investimento anual no plano Profissional</span>
+        <span class="roi-row-val">R$21.600</span>
+      </div>
+      <div class="roi-row">
+        <span class="roi-row-label">Economia de comissão Booking (10 reservas/mês)</span>
+        <span class="roi-row-val">R$28.350/ano</span>
+      </div>
+      <div class="roi-row">
+        <span class="roi-row-label">Aumento de 2% na ocupação média temporada</span>
+        <span class="roi-row-val">+R$200.000/ano</span>
+      </div>
+      <div class="roi-row total">
+        <span class="roi-row-label">Potencial de retorno anual</span>
+        <span class="roi-row-val">R$228.350</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- PROOF -->
+<div class="proof">
+  <div class="proof-inner">
+    <div class="proof-box">
+      <span class="proof-val">725</span>
+      <span class="proof-label">Contatos gerados para pousada da região</span>
+    </div>
+    <div class="proof-box">
+      <span class="proof-val">R$900</span>
+      <span class="proof-label">Investimento total em tráfego pago</span>
+    </div>
+    <div class="proof-msg">
+      <p>"Menos de R$1,25 por contato interessado em reservar. Com a verba e o porte do Sete Ilhas, o potencial de resultado é proporcionalmente maior."</p>
+    </div>
+  </div>
+</div>
+
+<!-- CTA -->
+<div class="cta">
+  <div class="cta-inner">
+    <h2 class="cta-title">Pronto para começar?</h2>
+    <p class="cta-body">Qualquer dúvida sobre os planos ou sobre o que foi apresentado, estou à disposição.</p>
+    <a href="https://wa.me/5555991011436" class="cta-btn">Falar com Pedro Munareto</a>
+    <p class="cta-note">Pedro Munareto · (55) 99101-1436</p>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="f-l">Proposta elaborada por <span>Pedro Munareto</span> · Gestor de Instagram e Tráfego Pago</div>
+  <div class="f-r">Exclusivo para Hotel Sete Ilhas · Jurerê Internacional · Florianópolis SC</div>
+</footer>
+
+</body>
+</html>
