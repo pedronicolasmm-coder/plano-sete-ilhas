@@ -9,38 +9,36 @@
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 :root {
-  --gold:       #C4A040;
-  --gold-light: #D4B050;
-  --gold-pale:  #E8CC80;
-  --gold-nav:   #C4A040;
-  --navy:       #1A2A3A;
-  --navy-mid:   #243448;
-  --white:      #FFFFFF;
-  --off-white:  #FAFAF7;
-  --cream:      #F5F0E4;
-  --dark:       #1A1610;
-  --mid:        #5A5040;
-  --light:      #9A8A70;
-  --border:     #E0D4B0;
+  --gold: #C4A040;
+  --gold-pale: #E8CC80;
+  --navy: #1A2A3A;
+  --white: #FFFFFF;
+  --cream: #F5F0E4;
+  --cream-mid: #EDE5D5;
+  --dark: #1A1610;
+  --mid: #5A5040;
+  --light: #9A8A70;
+  --border: #E0D4B0;
+  --green: #2A8A4A;
+  --red: #C8201A;
 }
 
 html { scroll-behavior: smooth; }
-
 body {
   background: var(--white);
   color: var(--dark);
   font-family: 'Lato', sans-serif;
   font-weight: 400;
-  font-size: 17px;
-  line-height: 1.8;
+  font-size: 16px;
+  line-height: 1.7;
   -webkit-font-smoothing: antialiased;
 }
 
 /* NAV */
-.nav {
-  background: var(--gold-nav);
-  padding: 0 64px;
-  height: 72px;
+nav {
+  background: var(--gold);
+  padding: 0 60px;
+  height: 68px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -50,40 +48,33 @@ body {
 }
 .nav-logo {
   font-family: 'Cormorant Garamond', serif;
-  font-size: 1.3rem;
+  font-size: 1.2rem;
   font-weight: 600;
-  color: var(--white);
+  color: var(--dark);
   letter-spacing: 0.18em;
   text-transform: uppercase;
 }
-.nav-logo span { color: rgba(255,255,255,0.6); }
-.nav-logo sub {
+.nav-logo small {
   display: block;
   font-family: 'Lato', sans-serif;
-  font-size: 0.42rem;
+  font-size: 0.55rem;
   font-weight: 400;
-  letter-spacing: 0.3em;
-  text-transform: uppercase;
-  color: rgba(255,255,255,0.55);
-  margin-top: 1px;
+  letter-spacing: 0.28em;
+  color: rgba(26,22,16,0.55);
+  margin-top: 2px;
 }
 .nav-right {
-  font-size: 0.65rem;
-  letter-spacing: 0.25em;
+  font-size: 0.6rem;
+  letter-spacing: 0.22em;
   text-transform: uppercase;
-  color: rgba(255,255,255,0.55);
+  color: rgba(26,22,16,0.55);
 }
 
 /* HERO */
 .hero {
   background: var(--navy);
-  min-height: 88vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  padding: 100px 60px 80px;
   text-align: center;
-  padding: 80px 60px;
   position: relative;
   overflow: hidden;
 }
@@ -94,591 +85,554 @@ body {
   background: radial-gradient(ellipse 70% 60% at 50% 80%, rgba(196,160,64,0.12) 0%, transparent 65%);
   pointer-events: none;
 }
-.hero-eyebrow {
-  font-size: 0.7rem;
-  letter-spacing: 0.42em;
+.hero-label {
+  font-size: 0.6rem;
+  letter-spacing: 0.38em;
   text-transform: uppercase;
-  color: var(--gold-light);
+  color: var(--gold);
   margin-bottom: 24px;
-  display: flex;
-  align-items: center;
-  gap: 16px;
-}
-.hero-eyebrow::before,
-.hero-eyebrow::after {
-  content: '';
-  width: 32px;
-  height: 1px;
-  background: var(--gold-pale);
+  display: block;
 }
 .hero h1 {
   font-family: 'Cormorant Garamond', serif;
-  font-size: clamp(2.4rem, 5vw, 4rem);
-  font-weight: 400;
+  font-size: clamp(2.2rem, 4.5vw, 3.6rem);
+  font-weight: 300;
   color: var(--white);
-  line-height: 1.1;
+  line-height: 1.12;
   margin-bottom: 20px;
-  letter-spacing: 0.04em;
 }
-.hero h1 em {
-  font-style: italic;
-  color: var(--gold-light);
-}
+.hero h1 em { font-style: italic; color: var(--gold); }
 .hero-sub {
-  font-size: 1.05rem;
+  font-size: 1rem;
   color: rgba(255,255,255,0.5);
-  max-width: 520px;
+  max-width: 560px;
+  margin: 0 auto 64px;
   line-height: 1.8;
-  margin-bottom: 56px;
 }
-.hero-divider {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-  margin-bottom: 56px;
-}
-.hero-divider::before,
-.hero-divider::after {
-  content: '';
-  width: 48px;
-  height: 1px;
-  background: rgba(196,160,64,0.4);
-}
-.hero-divider span { color: var(--gold); font-size: 0.8rem; }
 
 /* STATS */
-.stats-row {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
+.stats {
+  display: flex;
+  justify-content: center;
   gap: 0;
   border-top: 1px solid rgba(196,160,64,0.15);
   padding-top: 48px;
-  width: 100%;
-  max-width: 800px;
+  max-width: 760px;
+  margin: 0 auto;
   position: relative;
   z-index: 1;
 }
-.stat { text-align: center; padding: 0 24px; border-right: 1px solid rgba(196,160,64,0.15); }
+.stat {
+  flex: 1;
+  text-align: center;
+  padding: 0 20px;
+  border-right: 1px solid rgba(196,160,64,0.12);
+}
 .stat:last-child { border-right: none; }
 .stat-val {
   font-family: 'Cormorant Garamond', serif;
   font-size: 2.4rem;
-  font-weight: 400;
+  font-weight: 300;
   color: var(--gold);
   display: block;
   line-height: 1;
 }
 .stat-label {
-  font-size: 0.65rem;
-  letter-spacing: 0.18em;
+  font-size: 0.58rem;
+  letter-spacing: 0.16em;
   text-transform: uppercase;
   color: rgba(255,255,255,0.3);
   margin-top: 6px;
   display: block;
 }
 
-/* DIAGNOSTICO */
-.diag {
-  background: var(--cream);
-  padding: 80px 60px;
-  border-bottom: 1px solid var(--border);
-}
-.diag-inner { max-width: 1100px; margin: 0 auto; }
-.section-eyebrow {
-  font-size: 0.65rem;
-  letter-spacing: 0.38em;
+/* SECTIONS */
+.section { padding: 80px 60px; }
+.section-cream { background: var(--cream); }
+.section-white { background: var(--white); }
+.section-navy { background: var(--navy); }
+.inner { max-width: 1080px; margin: 0 auto; }
+
+.eyebrow {
+  font-size: 0.6rem;
+  letter-spacing: 0.36em;
   text-transform: uppercase;
   color: var(--gold);
   margin-bottom: 12px;
-  display: flex;
-  align-items: center;
-  gap: 12px;
+  display: block;
 }
-.section-eyebrow::before {
-  content: '';
-  width: 20px;
-  height: 1px;
-  background: var(--gold-pale);
-}
-.section-title {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: clamp(1.7rem, 3.5vw, 2.6rem);
-  font-weight: 400;
-  color: var(--dark);
-  line-height: 1.15;
-  margin-bottom: 48px;
-}
-.section-title em { font-style: italic; color: var(--gold); }
+.section-navy .eyebrow { color: rgba(196,160,64,0.8); }
 
+h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+  font-weight: 300;
+  line-height: 1.15;
+  color: var(--dark);
+  margin-bottom: 12px;
+}
+h2 em { font-style: italic; color: var(--gold); }
+.section-navy h2 { color: var(--white); }
+
+.rule { width: 40px; height: 2px; background: var(--gold); margin: 20px 0 36px; }
+
+/* DIAG GRID */
 .diag-grid {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   gap: 16px;
+  margin-top: 48px;
 }
-.diag-card {
+.dcard {
   background: var(--white);
-  padding: 40px 36px;
   border: 1px solid var(--border);
   border-top: 3px solid var(--gold);
+  padding: 32px 28px;
 }
-.diag-card h3 {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 1.05rem;
-  font-weight: 600;
-  color: var(--dark);
-  margin-bottom: 10px;
-}
-.diag-card p {
-  font-size: 0.95rem;
-  color: var(--mid);
-  line-height: 1.85;
-}
-.diag-opp {
+.dcard.dark {
   background: var(--navy);
   border-top-color: var(--gold);
 }
-.diag-opp h3 { color: var(--white); }
-.diag-opp p { color: rgba(255,255,255,0.55); }
+.dcard h3 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--dark);
+  margin-bottom: 10px;
+  line-height: 1.3;
+}
+.dcard.dark h3 { color: var(--white); }
+.dcard p { font-size: 0.88rem; color: var(--mid); line-height: 1.8; }
+.dcard.dark p { color: rgba(255,255,255,0.5); }
 
-/* PLANO 30 DIAS */
-.plano {
-  background: var(--white);
-  padding: 80px 60px;
-}
-.plano-inner { max-width: 1100px; margin: 0 auto; }
-.timeline {
-  margin-top: 48px;
-  display: flex;
-  flex-direction: column;
-  gap: 0;
-}
+/* TIMELINE */
+.timeline { margin-top: 48px; }
 .week {
   display: grid;
-  grid-template-columns: 120px 1fr;
-  gap: 0;
+  grid-template-columns: 100px 1fr;
   border-bottom: 1px solid var(--border);
 }
 .week:first-child { border-top: 1px solid var(--border); }
-.week-label {
+.week-n {
   background: var(--navy);
-  padding: 28px 24px;
+  border-right: 3px solid var(--gold);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   text-align: center;
-  border-right: 3px solid var(--gold);
+  padding: 24px 16px;
 }
-.week-num {
+.week-n span:first-child {
   font-family: 'Cormorant Garamond', serif;
   font-size: 2rem;
-  font-weight: 400;
+  font-weight: 300;
   color: var(--gold);
   line-height: 1;
-  display: block;
 }
-.week-sub {
-  font-size: 0.6rem;
-  letter-spacing: 0.22em;
+.week-n span:last-child {
+  font-size: 0.52rem;
+  letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: rgba(255,255,255,0.4);
+  color: rgba(255,255,255,0.35);
   margin-top: 4px;
-  display: block;
 }
-.week-content {
-  padding: 36px 40px;
-}
-.week-content h4 {
-  font-size: 0.92rem;
+.week-body { padding: 28px 36px; }
+.week-body h4 {
+  font-size: 0.82rem;
   font-weight: 700;
-  color: var(--dark);
-  letter-spacing: 0.06em;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
-  margin-bottom: 10px;
+  color: var(--dark);
+  margin-bottom: 12px;
 }
-.week-content ul {
-  list-style: none;
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-}
-.week-content ul li {
-  font-size: 0.8rem;
+.week-body ul { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+.week-body ul li {
+  font-size: 0.88rem;
   color: var(--mid);
   display: flex;
   gap: 10px;
   align-items: flex-start;
 }
-.week-content ul li::before {
+.week-body ul li::before {
   content: '→';
   color: var(--gold);
   flex-shrink: 0;
-  font-size: 0.75rem;
-  margin-top: 1px;
+  font-size: 0.8rem;
+  margin-top: 2px;
 }
 
 /* ENTREGAVEIS */
-.entrega {
-  background: var(--navy);
-  padding: 80px 60px;
-}
-.entrega-inner { max-width: 1100px; margin: 0 auto; }
-.entrega .section-title { color: var(--white); }
-.entrega .section-title em { color: var(--gold-light); }
-.entrega .section-eyebrow { color: var(--gold-light); }
-.entrega .section-eyebrow::before { background: rgba(196,160,64,0.4); }
-
 .entrega-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 2px;
-  background: rgba(255,255,255,0.05);
+  background: rgba(255,255,255,0.06);
   margin-top: 48px;
 }
-.entrega-item {
+.ecard {
   background: rgba(255,255,255,0.04);
-  padding: 40px 36px;
-  border: 1px solid rgba(196,160,64,0.1);
+  padding: 36px 30px;
 }
-.entrega-icon { font-size: 1.6rem; margin-bottom: 14px; display: block; }
-.entrega-item h4 {
-  font-size: 0.92rem;
+.ecard-icon { font-size: 1.6rem; margin-bottom: 14px; display: block; }
+.ecard h4 {
+  font-size: 0.82rem;
   font-weight: 700;
-  color: var(--white);
-  letter-spacing: 0.06em;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
-  margin-bottom: 10px;
+  color: var(--white);
+  margin-bottom: 12px;
 }
-.entrega-item ul {
-  list-style: none;
-  display: flex;
-  flex-direction: column;
-  gap: 5px;
-}
-.entrega-item ul li {
-  font-size: 0.88rem;
-  color: rgba(255,255,255,0.6);
+.ecard ul { list-style: none; display: flex; flex-direction: column; gap: 6px; }
+.ecard ul li {
+  font-size: 0.82rem;
+  color: rgba(255,255,255,0.5);
   display: flex;
   gap: 8px;
   align-items: flex-start;
 }
-.entrega-item ul li::before {
+.ecard ul li::before {
   content: '✓';
   color: var(--gold);
   flex-shrink: 0;
-  font-size: 0.65rem;
+  font-size: 0.7rem;
+  margin-top: 2px;
 }
 
-/* PLANOS */
-.planos-section {
-  background: var(--cream);
-  padding: 80px 60px;
+/* ===== PLANOS ===== */
+.planos-section { background: var(--cream); padding: 80px 60px; }
+
+/* Tab buttons */
+.tabs {
+  display: flex;
+  gap: 0;
+  margin-bottom: 48px;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  width: fit-content;
 }
-.planos-inner { max-width: 1100px; margin: 0 auto; }
-.planos-grid {
+.tab-btn {
+  padding: 14px 36px;
+  font-family: 'Lato', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 700;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  letter-spacing: 0.04em;
+}
+.tab-btn.on { background: var(--navy); color: var(--white); }
+.tab-btn.off { background: var(--white); color: var(--light); }
+.eco-badge {
+  background: var(--gold);
+  color: var(--dark);
+  font-size: 0.55rem;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  padding: 3px 8px;
+  border-radius: 3px;
+}
+
+/* Panes */
+.pane { display: none; }
+.pane.show { display: block; }
+
+/* Cards row */
+.cards {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 16px;
-  margin-top: 48px;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 20px;
+  align-items: start;
 }
-.plano-card {
+
+/* Plan card */
+.pc {
   background: var(--white);
   border: 1px solid var(--border);
+  border-radius: 10px;
   overflow: hidden;
+}
+.pc.destaque {
+  border: 2px solid var(--red);
   position: relative;
+  margin-top: 16px;
 }
-.plano-card.featured {
-  border-color: var(--gold);
-  transform: translateY(-8px);
-  box-shadow: 0 20px 60px rgba(196,160,64,0.15);
-}
-.plano-header {
-  background: var(--navy);
-  padding: 40px 36px;
-  text-align: center;
-}
-.plano-card.featured .plano-header { background: var(--gold); }
-.plano-tag {
-  font-size: 0.65rem;
-  letter-spacing: 0.3em;
-  text-transform: uppercase;
-  color: rgba(255,255,255,0.6);
-  margin-bottom: 8px;
-  display: block;
-}
-.plano-card.featured .plano-tag { color: rgba(26,22,16,0.6); }
-.plano-name {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 2rem;
-  font-weight: 400;
+.pc-badge {
+  position: absolute;
+  top: -14px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--red);
   color: var(--white);
-  letter-spacing: 0.06em;
-  display: block;
-  margin-bottom: 20px;
-}
-.plano-card.featured .plano-name { color: var(--dark); }
-.plano-price {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 3.5rem;
-  font-weight: 400;
-  color: var(--gold-pale);
-  line-height: 1;
-  display: block;
-}
-.plano-card.featured .plano-price { color: var(--dark); }
-.plano-price-label {
-  font-size: 0.65rem;
-  letter-spacing: 0.18em;
+  font-size: 0.58rem;
+  font-weight: 800;
+  letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: rgba(255,255,255,0.4);
-  display: block;
-  margin-top: 6px;
+  padding: 5px 16px;
+  border-radius: 20px;
+  white-space: nowrap;
 }
-.plano-card.featured .plano-price-label { color: rgba(26,22,16,0.5); }
-.plano-body {
-  padding: 40px 36px;
-}
-.plano-body ul {
-  list-style: none;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  margin-bottom: 28px;
-}
-.plano-body ul li {
-  font-size: 0.9rem;
-  color: var(--mid);
-  display: flex;
-  gap: 10px;
-  align-items: flex-start;
-  padding-bottom: 10px;
+.pc-head {
+  padding: 32px 28px 24px;
   border-bottom: 1px solid var(--border);
 }
-.plano-body ul li:last-child { border-bottom: none; }
-.plano-body ul li::before {
-  content: '✓';
-  color: var(--gold);
-  flex-shrink: 0;
+.pc-label {
+  font-size: 0.58rem;
   font-weight: 700;
-}
-.plano-note {
-  font-size: 0.75rem;
-  color: var(--light);
-  font-style: italic;
-  text-align: center;
-  padding: 0 0 8px;
-}
-.featured-badge {
-  position: absolute;
-  top: 16px;
-  right: 16px;
-  background: var(--navy);
-  color: var(--gold);
-  font-size: 0.62rem;
-  font-weight: 700;
-  letter-spacing: 0.2em;
+  letter-spacing: 0.28em;
   text-transform: uppercase;
-  padding: 4px 10px;
+  color: var(--light);
+  display: block;
+  margin-bottom: 6px;
 }
+.pc-name {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.7rem;
+  font-weight: 400;
+  color: var(--dark);
+  display: block;
+  margin-bottom: 14px;
+}
+.pc-price {
+  display: flex;
+  align-items: baseline;
+  gap: 4px;
+  margin-bottom: 6px;
+}
+.pc-price sup {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--dark);
+  margin-top: 4px;
+}
+.pc-price big {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 3rem;
+  font-weight: 300;
+  color: var(--dark);
+  line-height: 1;
+}
+.pc-price span {
+  font-size: 0.9rem;
+  color: var(--light);
+}
+.pc-total {
+  font-size: 0.78rem;
+  color: var(--light);
+  display: block;
+}
+.pc-total strong { color: var(--dark); }
+.pc-eco {
+  display: inline-block;
+  margin-top: 8px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--green);
+}
+.pc-body { padding: 24px 28px; }
+.pc-body ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+.pc-body ul li {
+  font-size: 0.88rem;
+  color: var(--mid);
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--border);
+  line-height: 1.4;
+}
+.pc-body ul li:last-child { border-bottom: none; padding-bottom: 0; }
+.ok { color: var(--green); font-size: 1rem; flex-shrink: 0; line-height: 1.3; }
+.no { color: var(--red); font-size: 1rem; flex-shrink: 0; line-height: 1.3; }
+
+/* Comparativo */
+.comp {
+  background: var(--navy);
+  border-radius: 12px;
+  padding: 40px 44px;
+  margin-top: 48px;
+}
+.comp h3 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.4rem;
+  font-weight: 400;
+  color: var(--white);
+  margin-bottom: 8px;
+}
+.comp p {
+  font-size: 0.85rem;
+  color: rgba(255,255,255,0.45);
+  margin-bottom: 28px;
+  line-height: 1.7;
+}
+.comp table { width: 100%; border-collapse: collapse; }
+.comp table th {
+  font-size: 0.58rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.35);
+  padding: 0 0 12px;
+  text-align: left;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+.comp table th:not(:first-child) { text-align: right; }
+.comp table td {
+  padding: 14px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+  font-size: 0.9rem;
+  color: rgba(255,255,255,0.6);
+}
+.comp table td:not(:first-child) { text-align: right; }
+.comp table td.eco { color: var(--gold); font-weight: 700; }
+.comp table tr:last-child td { border-bottom: none; }
 
 /* ROI */
-.roi {
-  background: var(--white);
-  padding: 80px 60px;
-  border-top: 1px solid var(--border);
-}
-.roi-inner {
-  max-width: 1100px;
-  margin: 0 auto;
+.roi-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 60px;
   align-items: center;
+  margin-top: 48px;
 }
-.roi-left .section-title { margin-bottom: 24px; }
-.roi-left p {
-  font-size: 0.95rem;
-  color: var(--mid);
-  line-height: 1.85;
-  margin-bottom: 16px;
-}
-.roi-numbers {
-  display: flex;
-  flex-direction: column;
-  gap: 2px;
-}
+.roi-text p { font-size: 0.9rem; color: var(--mid); line-height: 1.85; margin-bottom: 16px; }
+.roi-rows { display: flex; flex-direction: column; gap: 2px; }
 .roi-row {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px 24px;
+  padding: 18px 22px;
   background: var(--cream);
   border-left: 3px solid var(--gold);
 }
-.roi-row:nth-child(even) { background: var(--white); border-color: var(--navy); }
-.roi-row-label { font-size: 0.92rem; color: var(--mid); }
-.roi-row-val { font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; font-weight: 400; color: var(--gold); }
+.roi-row:nth-child(even) { background: var(--white); border-left-color: var(--navy); }
 .roi-row.total { background: var(--navy); }
-.roi-row.total .roi-row-label { color: rgba(255,255,255,0.6); font-weight: 600; }
-.roi-row.total .roi-row-val { color: var(--gold-light); font-size: 1.8rem; }
+.roi-row span:first-child { font-size: 0.88rem; color: var(--mid); }
+.roi-row span:last-child { font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; font-weight: 400; color: var(--gold); }
+.roi-row.total span:first-child { color: rgba(255,255,255,0.6); font-weight: 600; }
+.roi-row.total span:last-child { font-size: 1.8rem; color: var(--gold); }
 
 /* PROOF */
-.proof {
-  background: var(--navy);
-  padding: 60px;
-  border-top: 3px solid var(--gold);
-}
-.proof-inner {
-  max-width: 900px;
-  margin: 0 auto;
+.proof { background: var(--navy); padding: 60px; }
+.proof-inner { max-width: 1080px; margin: 0 auto; }
+.proof-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 2px;
-  background: rgba(255,255,255,0.04);
+  background: rgba(255,255,255,0.05);
+  margin-top: 40px;
 }
-.proof-box {
+.pbox {
   background: rgba(0,0,0,0.15);
-  padding: 52px 40px;
+  padding: 48px 36px;
   text-align: center;
 }
-.proof-val {
+.pbox big {
   font-family: 'Cormorant Garamond', serif;
   font-size: 4.5rem;
-  font-weight: 400;
+  font-weight: 300;
   color: var(--gold);
   display: block;
   line-height: 1;
 }
-.proof-label {
-  font-size: 0.65rem;
+.pbox span {
+  font-size: 0.6rem;
   letter-spacing: 0.2em;
   text-transform: uppercase;
   color: rgba(255,255,255,0.35);
   margin-top: 8px;
   display: block;
 }
-.proof-msg {
-  padding: 40px 40px;
-  background: rgba(0,0,0,0.1);
-  display: flex;
-  align-items: center;
+.proof-quote {
   grid-column: span 2;
+  background: rgba(0,0,0,0.1);
+  padding: 40px 48px;
+  text-align: center;
 }
-.proof-msg p {
+.proof-quote p {
   font-family: 'Cormorant Garamond', serif;
-  font-size: 1.25rem;
+  font-size: 1.2rem;
   font-style: italic;
   color: rgba(255,255,255,0.75);
-  font-size: 17px;
-  line-height: 1.8;
-  text-align: center;
-  width: 100%;
+  line-height: 1.65;
 }
 
 /* CTA */
-.cta {
-  background: var(--gold);
-  padding: 80px 60px;
-  text-align: center;
-}
-.cta-inner { max-width: 480px; margin: 0 auto; }
-.cta-title {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: clamp(1.6rem, 3vw, 2.4rem);
-  font-weight: 400;
-  color: var(--dark);
-  line-height: 1.2;
-  margin-bottom: 16px;
-}
-.cta-body {
-  font-size: 0.95rem;
-  color: rgba(26,22,16,0.65);
-  line-height: 1.75;
-  margin-bottom: 36px;
-}
+.cta { background: var(--gold); padding: 96px 60px; text-align: center; }
+.cta h2 { color: var(--dark); font-size: clamp(1.6rem, 3vw, 2.4rem); margin-bottom: 16px; }
+.cta h2 em { color: rgba(26,22,16,0.6); }
+.cta p { font-size: 0.9rem; color: rgba(26,22,16,0.6); margin-bottom: 40px; }
 .cta-btn {
   display: inline-block;
   background: var(--navy);
   color: var(--white);
   font-family: 'Lato', sans-serif;
-  font-size: 0.62rem;
+  font-size: 0.7rem;
   font-weight: 700;
-  letter-spacing: 0.22em;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
   padding: 18px 52px;
   text-decoration: none;
-  transition: background 0.25s;
+  border-radius: 3px;
+  transition: background 0.2s;
 }
 .cta-btn:hover { background: var(--dark); }
-.cta-note {
+.cta small {
+  display: block;
   margin-top: 16px;
-  font-size: 0.65rem;
-  color: rgba(26,22,16,0.4);
-  letter-spacing: 0.15em;
+  font-size: 0.6rem;
+  letter-spacing: 0.16em;
   text-transform: uppercase;
+  color: rgba(26,22,16,0.4);
 }
 
 /* FOOTER */
 footer {
   background: var(--dark);
-  padding: 24px 64px;
+  padding: 24px 60px;
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
-.f-l { font-size: 0.7rem; color: rgba(255,255,255,0.2); letter-spacing: 0.1em; }
-.f-l span { color: var(--gold-light); opacity: 0.65; }
-.f-r { font-size: 0.52rem; color: rgba(255,255,255,0.12); }
+footer span { font-size: 0.6rem; color: rgba(255,255,255,0.2); letter-spacing: 0.1em; }
+footer span b { color: rgba(196,160,64,0.65); font-weight: 400; }
 
+/* RESPONSIVE */
 @media (max-width: 860px) {
-  .nav { padding: 0 24px; }
-  .hero { padding: 64px 24px; min-height: auto; }
-  .stats-row { grid-template-columns: 1fr 1fr; gap: 24px; }
-  .stat { border-right: none; }
-  .diag { padding: 60px 24px; }
-  .diag-grid { grid-template-columns: 1fr; }
-  .plano { padding: 60px 24px; }
-  .week { grid-template-columns: 80px 1fr; }
-  .entrega { padding: 60px 24px; }
-  .entrega-grid { grid-template-columns: 1fr; }
-  .planos-section { padding: 60px 24px; }
-  .planos-grid { grid-template-columns: 1fr; }
-  .plano-card.featured { transform: none; }
-  .roi { padding: 60px 24px; }
-  .roi-inner { grid-template-columns: 1fr; gap: 40px; }
-  .proof { padding: 40px 24px; }
-  .proof-inner { grid-template-columns: 1fr; }
-  .proof-msg { grid-column: span 1; }
-  .cta { padding: 72px 24px; }
-  footer { padding: 20px 24px; flex-direction: column; gap: 8px; text-align: center; }
+  nav, .hero, .section, .planos-section, .proof, .cta, footer { padding-left: 24px; padding-right: 24px; }
+  .stats { flex-wrap: wrap; }
+  .stat { border-right: none; min-width: 45%; }
+  .diag-grid, .entrega-grid, .cards, .roi-grid { grid-template-columns: 1fr; }
+  .proof-grid { grid-template-columns: 1fr; }
+  .proof-quote { grid-column: span 1; }
+  .pc.destaque { margin-top: 24px; }
+  .week { grid-template-columns: 72px 1fr; }
+  .comp table { font-size: 0.8rem; }
 }
 </style>
 </head>
 <body>
 
 <!-- NAV -->
-<nav class="nav">
-  <div>
-    <div class="nav-logo">SETE<span>•</span>ILHAS
-      <sub>Jurerê Internacional · Florianópolis</sub>
-    </div>
+<nav>
+  <div class="nav-logo">
+    SETE•ILHAS
+    <small>Jurerê Internacional · Florianópolis</small>
   </div>
   <div class="nav-right">Plano de Ação · Pedro Munareto</div>
 </nav>
 
 <!-- HERO -->
-<section class="hero">
-  <div class="hero-eyebrow">Proposta Personalizada · Hotel Sete Ilhas</div>
-  <h1>
-    Estratégia de Marketing Digital<br>
-    <em>para aumentar o faturamento<br>na média temporada</em>
-  </h1>
-  <p class="hero-sub">
-    Com base na conversa de hoje, este plano foi desenvolvido especificamente para o Sete Ilhas: 40 anos de história, 88% de ocupação no verão e potencial real de crescimento na média temporada.
-  </p>
-  <div class="hero-divider"><span>✦</span></div>
-
-  <div class="stats-row">
+<div class="hero">
+  <span class="hero-label">Proposta Personalizada · Hotel Sete Ilhas</span>
+  <h1>Estratégia de Marketing Digital<br><em>para aumentar o faturamento<br>na média temporada</em></h1>
+  <p class="hero-sub">Com base na reunião de hoje, este plano foi desenvolvido especificamente para o Sete Ilhas: 40 anos de história, 88% de ocupação no verão e potencial real de crescimento na média temporada.</p>
+  <div class="stats">
     <div class="stat">
       <span class="stat-val">40</span>
       <span class="stat-label">Anos de história</span>
@@ -696,111 +650,98 @@ footer {
       <span class="stat-label">Seguidores Instagram</span>
     </div>
   </div>
-</section>
+</div>
 
 <!-- DIAGNÓSTICO -->
-<div class="diag">
-  <div class="diag-inner">
-    <div class="section-eyebrow">O que foi identificado</div>
-    <h2 class="section-title">Três pontos que estão limitando<br><em>o faturamento atual</em></h2>
-
+<div class="section section-cream">
+  <div class="inner">
+    <span class="eyebrow">O que foi identificado</span>
+    <h2>Três pontos que limitam<br><em>o faturamento atual</em></h2>
+    <div class="rule"></div>
     <div class="diag-grid">
-      <div class="diag-card">
+      <div class="dcard">
         <h3>Orgânico e pago não conversam</h3>
-        <p>O investimento de R$3.000/mês em tráfego existe, mas o feed orgânico não sustenta o que o anúncio promete. Quando o usuário clica no anúncio e vai ao perfil, não encontra consistência. Isso derruba a conversão.</p>
+        <p>O investimento de R$3.000/mês em tráfego existe, mas o feed orgânico não sustenta o que o anúncio promete. Isso derruba a conversão de cada campanha.</p>
       </div>
-      <div class="diag-card">
-        <h3>As Casas do Recanto sem campanha própria</h3>
-        <p>O produto de maior ticket do hotel não tem estratégia de conteúdo nem campanha específica. Famílias de 6 a 8 pessoas não se sentem representadas no feed atual e não têm um caminho claro para reservar esse produto.</p>
+      <div class="dcard">
+        <h3>Casas do Recanto sem campanha própria</h3>
+        <p>O produto de maior ticket não tem estratégia de conteúdo nem campanha específica. Famílias de 6 a 8 pessoas não têm um caminho claro para reservar.</p>
       </div>
-      <div class="diag-card">
+      <div class="dcard">
         <h3>Restaurante misturado ao hotel</h3>
-        <p>Dois públicos diferentes no mesmo perfil dilui os dois. Quem quer jantar no bistrô e quem quer se hospedar têm jornadas de decisão completamente diferentes. Separar os perfis dobra o alcance com o mesmo esforço.</p>
+        <p>Dois públicos diferentes no mesmo perfil dilui os dois. Separar os perfis dobra o alcance com o mesmo esforço e investimento.</p>
       </div>
-      <div class="diag-card diag-opp">
+      <div class="dcard dark">
         <h3>Queda de 30% na demanda geral</h3>
-        <p>O mercado está mais competitivo com nordeste atraindo turistas do sul. A resposta não é esperar a demanda voltar. É capturar uma fatia maior do público que ainda viaja para Floripa, especialmente na média temporada.</p>
+        <p>O nordeste está atraindo turistas do sul. A resposta é capturar uma fatia maior do público que ainda viaja para Floripa, especialmente na média temporada.</p>
       </div>
-      <div class="diag-card diag-opp">
+      <div class="dcard dark">
         <h3>Pacotes de experiência subexplorados</h3>
-        <p>Semana Farroupilha, massagem, transfer, aluguel de carro. Esses extras existem mas não estão sendo vendidos como pacote. Hóspede que compra experiência gasta mais e tem ticket médio até 40% maior.</p>
+        <p>Semana Farroupilha, massagem, transfer. Esses extras existem mas não são vendidos como pacote. Hóspede que compra experiência tem ticket médio até 40% maior.</p>
       </div>
-      <div class="diag-card diag-opp">
-        <h3>Público de Balneário Camboriú inexplorado</h3>
-        <p>Quem pesquisa hotel em Balneário frequentemente considera Jurerê. São públicos com perfil semelhante e alta renda. Uma campanha segmentada para esse público pode preencher a média temporada com hóspedes de alto valor.</p>
+      <div class="dcard dark">
+        <h3>Público de Balneário inexplorado</h3>
+        <p>Quem pesquisa hotel em Balneário frequentemente considera Jurerê. Uma campanha segmentada para esse público pode preencher a média temporada.</p>
       </div>
     </div>
   </div>
 </div>
 
 <!-- PLANO 30 DIAS -->
-<div class="plano">
-  <div class="plano-inner">
-    <div class="section-eyebrow">Os primeiros 30 dias</div>
-    <h2 class="section-title">Plano de ação semana<br><em>a semana</em></h2>
-
+<div class="section section-white">
+  <div class="inner">
+    <span class="eyebrow">Os primeiros 30 dias</span>
+    <h2>Plano semana<br><em>a semana</em></h2>
+    <div class="rule"></div>
     <div class="timeline">
       <div class="week">
-        <div class="week-label">
-          <span class="week-num">01</span>
-          <span class="week-sub">Semana</span>
-        </div>
-        <div class="week-content">
+        <div class="week-n"><span>01</span><span>Semana</span></div>
+        <div class="week-body">
           <h4>Estruturação e base</h4>
           <ul>
             <li>Auditoria completa do perfil @seteilhas e definição da linha editorial</li>
             <li>Criação da identidade visual do feed com foco em famílias e Casas do Recanto</li>
-            <li>Separação da estratégia do restaurante: perfil próprio ou linha de conteúdo separada</li>
+            <li>Separação da estratégia do restaurante: perfil próprio ou linha separada</li>
             <li>Levantamento de criativos: fotos, vídeos e depoimentos disponíveis</li>
             <li>Configuração e auditoria da conta de anúncios no Meta Ads</li>
           </ul>
         </div>
       </div>
       <div class="week">
-        <div class="week-label">
-          <span class="week-num">02</span>
-          <span class="week-sub">Semana</span>
-        </div>
-        <div class="week-content">
+        <div class="week-n"><span>02</span><span>Semana</span></div>
+        <div class="week-body">
           <h4>Conteúdo e primeiros anúncios</h4>
           <ul>
-            <li>Publicação dos primeiros Reels com narrativa de experiência: pôr do sol, piscina, café da manhã</li>
-            <li>Lançamento de campanha específica para as Casas do Recanto segmentada para famílias de SC e RS</li>
-            <li>Início de campanha para público de Balneário Camboriú e Joinville</li>
-            <li>Criação de conteúdo de bastidores do restaurante bistrô</li>
-            <li>Implementação de resposta ativa a todos os comentários e DMs</li>
+            <li>Primeiros Reels com narrativa de experiência: pôr do sol, piscina, café da manhã</li>
+            <li>Campanha específica para as Casas do Recanto segmentada para famílias de SC e RS</li>
+            <li>Campanha para público de Balneário Camboriú e Joinville</li>
+            <li>Conteúdo de bastidores do restaurante bistrô</li>
+            <li>Resposta ativa a todos os comentários e DMs</li>
           </ul>
         </div>
       </div>
       <div class="week">
-        <div class="week-label">
-          <span class="week-num">03</span>
-          <span class="week-sub">Semana</span>
-        </div>
-        <div class="week-content">
+        <div class="week-n"><span>03</span><span>Semana</span></div>
+        <div class="week-body">
           <h4>Otimização e escala</h4>
           <ul>
-            <li>Análise dos primeiros resultados de campanha e otimização de público e criativos</li>
-            <li>Lançamento de campanha de pacote de experiência: hospedagem + massagem + transfer</li>
-            <li>Conteúdo de Semana Farroupilha com antecedência para capturar reservas antecipadas</li>
-            <li>Reels mostrando hóspedes reais com autorização, famílias nas Casas</li>
-            <li>Início de campanha no Google Ads para buscas de hotel em Jurerê e Florianópolis</li>
+            <li>Análise dos primeiros resultados e otimização de público e criativos</li>
+            <li>Campanha de pacote de experiência: hospedagem + massagem + transfer</li>
+            <li>Conteúdo de Semana Farroupilha para capturar reservas antecipadas</li>
+            <li>Reels mostrando hóspedes reais nas Casas do Recanto</li>
+            <li>Início de campanha no Google Ads para buscas de hotel em Jurerê</li>
           </ul>
         </div>
       </div>
       <div class="week">
-        <div class="week-label">
-          <span class="week-num">04</span>
-          <span class="week-sub">Semana</span>
-        </div>
-        <div class="week-content">
+        <div class="week-n"><span>04</span><span>Semana</span></div>
+        <div class="week-body">
           <h4>Consolidação e relatório</h4>
           <ul>
-            <li>Relatório completo de resultados: alcance, engajamento, cliques e reservas geradas</li>
+            <li>Relatório completo: alcance, engajamento, cliques e reservas geradas</li>
             <li>Apresentação de resultados e ajuste de estratégia para o mês 2</li>
-            <li>Consolidação da linha editorial com calendário de conteúdo para os próximos 30 dias</li>
+            <li>Calendário de conteúdo para os próximos 30 dias</li>
             <li>Expansão de campanhas para o TikTok com conteúdo de experiência em Jurerê</li>
-            <li>Análise de performance por acomodação para ajustar foco de campanha</li>
           </ul>
         </div>
       </div>
@@ -809,49 +750,47 @@ footer {
 </div>
 
 <!-- ENTREGÁVEIS -->
-<div class="entrega">
-  <div class="entrega-inner">
-    <div class="section-eyebrow">O que está incluído</div>
-    <h2 class="section-title">Tudo que será entregue<br><em>todo mês</em></h2>
-
+<div class="section section-navy">
+  <div class="inner">
+    <span class="eyebrow">O que está incluído</span>
+    <h2>Tudo que será entregue<br><em>todo mês</em></h2>
+    <div class="rule"></div>
     <div class="entrega-grid">
-      <div class="entrega-item">
-        <span class="entrega-icon">📱</span>
+      <div class="ecard">
+        <span class="ecard-icon">📱</span>
         <h4>Gestão de Instagram</h4>
         <ul>
           <li>Planejamento editorial mensal</li>
           <li>Criação de Reels, carrosséis e stories</li>
           <li>Identidade visual consistente</li>
           <li>Resposta a comentários e DMs</li>
-          <li>Hashtags estratégicas</li>
           <li>Relatório mensal de desempenho</li>
         </ul>
       </div>
-      <div class="entrega-item">
-        <span class="entrega-icon">🎵</span>
+      <div class="ecard">
+        <span class="ecard-icon">🎵</span>
         <h4>TikTok e YouTube</h4>
         <ul>
           <li>Adaptação de conteúdo para TikTok</li>
-          <li>Reels reutilizados como Shorts no YouTube</li>
+          <li>Reels reutilizados como Shorts</li>
           <li>Conteúdo de destino: Jurerê e Floripa</li>
           <li>Tendências e áudios em alta</li>
           <li>Otimização de descrição e tags</li>
         </ul>
       </div>
-      <div class="entrega-item">
-        <span class="entrega-icon">🎯</span>
+      <div class="ecard">
+        <span class="ecard-icon">🎯</span>
         <h4>Tráfego Pago Meta Ads</h4>
         <ul>
           <li>Gestão completa da conta de anúncios</li>
           <li>Campanhas por produto: Casas, Suítes, Studios</li>
           <li>Segmentação por público e região</li>
-          <li>Criação de criativos para anúncio</li>
           <li>Otimização semanal de campanhas</li>
           <li>Relatório de ROAS e conversões</li>
         </ul>
       </div>
-      <div class="entrega-item">
-        <span class="entrega-icon">🔍</span>
+      <div class="ecard">
+        <span class="ecard-icon">🔍</span>
         <h4>Google Ads</h4>
         <ul>
           <li>Campanhas de pesquisa para hotel em Jurerê</li>
@@ -861,8 +800,8 @@ footer {
           <li>Integração com Google Analytics</li>
         </ul>
       </div>
-      <div class="entrega-item">
-        <span class="entrega-icon">📊</span>
+      <div class="ecard">
+        <span class="ecard-icon">📊</span>
         <h4>Estratégia e Consultoria</h4>
         <ul>
           <li>Reunião mensal de alinhamento</li>
@@ -872,8 +811,8 @@ footer {
           <li>Análise de concorrência mensal</li>
         </ul>
       </div>
-      <div class="entrega-item">
-        <span class="entrega-icon">📈</span>
+      <div class="ecard">
+        <span class="ecard-icon">📈</span>
         <h4>Relatórios e Resultados</h4>
         <ul>
           <li>Relatório semanal de campanhas pagas</li>
@@ -889,237 +828,226 @@ footer {
 
 <!-- PLANOS -->
 <div class="planos-section">
-  <div class="planos-inner">
-    <div class="section-eyebrow">Investimento</div>
-    <h2 class="section-title">Escolha o plano ideal<br><em>para o Sete Ilhas</em></h2>
+  <div class="inner">
+    <span class="eyebrow">Investimento</span>
+    <h2>Escolha o plano ideal<br><em>para o Sete Ilhas</em></h2>
+    <div class="rule"></div>
+    <p style="font-size:0.9rem;color:var(--mid);margin-bottom:40px;">Selecione a duração e veja como o plano de 5 meses representa uma economia significativa pelo mesmo serviço.</p>
 
-    <div class="planos-grid">
-<style>
-.tab-btns {
-  display: flex;
-  justify-content: center;
-  gap: 0;
-  margin-bottom: 52px;
-}
-.tab-btn {
-  padding: 16px 52px;
-  font-family: 'Lato', sans-serif;
-  font-size: 0.82rem;
-  font-weight: 700;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  border: 2px solid var(--gold);
-  cursor: pointer;
-  transition: all 0.2s;
-}
-.tab-btn.active {
-  background: var(--gold);
-  color: var(--dark);
-}
-.tab-btn.inactive {
-  background: transparent;
-  color: var(--gold);
-}
-.tab-pane { display: none; }
-.tab-pane.active { display: grid; grid-template-columns: repeat(3,1fr); gap: 20px; }
-.economia-badge {
-  display: inline-block;
-  background: #2A8A4A;
-  color: #fff;
-  font-size: 0.62rem;
-  font-weight: 700;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  padding: 5px 12px;
-  border-radius: 2px;
-  margin-top: 12px;
-}
-</style>
+    <!-- ABAS -->
+    <div class="tabs">
+      <button class="tab-btn on" id="btn3" onclick="trocarAba('3')">3 Meses</button>
+      <button class="tab-btn off" id="btn5" onclick="trocarAba('5')">5 Meses <span class="eco-badge">Economize</span></button>
+    </div>
 
-<div class="tab-btns">
-  <button class="tab-btn active" id="btn3" onclick="showTab('3')">Contrato 3 Meses</button>
-  <button class="tab-btn inactive" id="btn5" onclick="showTab('5')">Contrato 5 Meses</button>
-</div>
+    <!-- PAINEL 3 MESES -->
+    <div class="pane show" id="p3">
+      <div class="cards">
+        <div class="pc">
+          <div class="pc-head">
+            <span class="pc-label">Plano</span>
+            <span class="pc-name">Starter</span>
+            <div class="pc-price"><sup>R$</sup><big>960</big><span>/mês</span></div>
+            <span class="pc-total">Total: <strong>R$ 2.880</strong> em 3 meses</span>
+          </div>
+          <div class="pc-body">
+            <ul>
+              <li><span class="ok">✓</span>Gestão do Instagram</li>
+              <li><span class="ok">✓</span>12 posts por mês</li>
+              <li><span class="ok">✓</span>Stories diários</li>
+              <li><span class="ok">✓</span>Gestão do Meta Ads</li>
+              <li><span class="ok">✓</span>Relatório mensal</li>
+              <li><span class="ok">✓</span>Suporte via WhatsApp</li>
+              <li><span class="no">✗</span>Tráfego pago não incluso</li>
+            </ul>
+          </div>
+        </div>
 
-<!-- 3 MESES -->
-<div class="tab-pane active" id="pane3">
-  <div class="plano-card">
-    <div class="plano-header">
-      <span class="plano-tag">Plano · 3 Meses</span>
-      <span class="plano-name">Starter</span>
-      <span class="plano-price">R$960</span>
-      <span class="plano-price-label">por mês</span>
-    </div>
-    <div class="plano-body">
-      <ul>
-        <li>Gestão do Instagram</li>
-        <li>12 posts por mês</li>
-        <li>Stories diários</li>
-        <li>Gestão do Meta Ads</li>
-        <li>Relatório mensal</li>
-        <li>Suporte via WhatsApp</li>
-      </ul>
-      <p class="plano-note">Verba de anúncios não inclusa</p>
-    </div>
-  </div>
+        <div class="pc destaque">
+          <span class="pc-badge">Mais escolhido</span>
+          <div class="pc-head">
+            <span class="pc-label">Plano</span>
+            <span class="pc-name">Profissional</span>
+            <div class="pc-price"><sup>R$</sup><big>1.800</big><span>/mês</span></div>
+            <span class="pc-total">Total: <strong>R$ 5.400</strong> em 3 meses</span>
+          </div>
+          <div class="pc-body">
+            <ul>
+              <li><span class="ok">✓</span>Gestão Instagram + TikTok</li>
+              <li><span class="ok">✓</span>20 posts por mês</li>
+              <li><span class="ok">✓</span>Stories diários + Reels semanais</li>
+              <li><span class="ok">✓</span>Meta Ads e Google Ads</li>
+              <li><span class="ok">✓</span>Estratégia de pacotes</li>
+              <li><span class="ok">✓</span>Separação restaurante e hotel</li>
+              <li><span class="ok">✓</span>Relatório semanal e mensal</li>
+              <li><span class="ok">✓</span>Reunião mensal de alinhamento</li>
+            </ul>
+          </div>
+        </div>
 
-  <div class="plano-card featured">
-    <span class="featured-badge">Recomendado</span>
-    <div class="plano-header">
-      <span class="plano-tag">Plano · 3 Meses</span>
-      <span class="plano-name">Profissional</span>
-      <span class="plano-price">R$1.800</span>
-      <span class="plano-price-label">por mês</span>
+        <div class="pc">
+          <div class="pc-head">
+            <span class="pc-label">Plano</span>
+            <span class="pc-name">Premium</span>
+            <div class="pc-price"><sup>R$</sup><big>2.400</big><span>/mês</span></div>
+            <span class="pc-total">Total: <strong>R$ 7.200</strong> em 3 meses</span>
+          </div>
+          <div class="pc-body">
+            <ul>
+              <li><span class="ok">✓</span>Instagram + TikTok + YouTube</li>
+              <li><span class="ok">✓</span>Posts ilimitados</li>
+              <li><span class="ok">✓</span>Reels diários</li>
+              <li><span class="ok">✓</span>Meta Ads + Google Ads + remarketing</li>
+              <li><span class="ok">✓</span>Dois perfis: hotel e restaurante</li>
+              <li><span class="ok">✓</span>Dashboard em tempo real</li>
+              <li><span class="ok">✓</span>Reunião quinzenal</li>
+              <li><span class="ok">✓</span>Prioridade total no atendimento</li>
+            </ul>
+          </div>
+        </div>
+      </div>
     </div>
-    <div class="plano-body">
-      <ul>
-        <li>Gestão do Instagram + TikTok</li>
-        <li>20 posts por mês</li>
-        <li>Stories diários + Reels semanais</li>
-        <li>Gestão Meta Ads e Google Ads</li>
-        <li>Estratégia de pacotes e experiências</li>
-        <li>Separação restaurante e hotel</li>
-        <li>Relatório semanal e mensal</li>
-        <li>Reunião mensal de alinhamento</li>
-      </ul>
-      <p class="plano-note">Verba de anúncios não inclusa</p>
-    </div>
-  </div>
 
-  <div class="plano-card">
-    <div class="plano-header">
-      <span class="plano-tag">Plano · 3 Meses</span>
-      <span class="plano-name">Premium</span>
-      <span class="plano-price">R$2.400</span>
-      <span class="plano-price-label">por mês</span>
-    </div>
-    <div class="plano-body">
-      <ul>
-        <li>Gestão Instagram + TikTok + YouTube</li>
-        <li>Posts ilimitados</li>
-        <li>Reels diários</li>
-        <li>Meta Ads + Google Ads + remarketing</li>
-        <li>Estratégia completa por temporada</li>
-        <li>Dois perfis: hotel e restaurante</li>
-        <li>Dashboard em tempo real</li>
-        <li>Reunião quinzenal de alinhamento</li>
-        <li>Prioridade total no atendimento</li>
-      </ul>
-      <p class="plano-note">Verba de anúncios não inclusa</p>
-    </div>
-  </div>
-</div>
+    <!-- PAINEL 5 MESES -->
+    <div class="pane" id="p5">
+      <div class="cards">
+        <div class="pc">
+          <div class="pc-head">
+            <span class="pc-label">Plano</span>
+            <span class="pc-name">Starter</span>
+            <div class="pc-price"><sup>R$</sup><big>720</big><span>/mês</span></div>
+            <span class="pc-total">Total: <strong>R$ 3.600</strong> em 5 meses</span>
+            <span class="pc-eco">↓ Economia de R$ 1.200</span>
+          </div>
+          <div class="pc-body">
+            <ul>
+              <li><span class="ok">✓</span>Gestão do Instagram</li>
+              <li><span class="ok">✓</span>12 posts por mês</li>
+              <li><span class="ok">✓</span>Stories diários</li>
+              <li><span class="ok">✓</span>Gestão do Meta Ads</li>
+              <li><span class="ok">✓</span>Relatório mensal</li>
+              <li><span class="ok">✓</span>Suporte via WhatsApp</li>
+              <li><span class="no">✗</span>Tráfego pago não incluso</li>
+            </ul>
+          </div>
+        </div>
 
-<!-- 5 MESES -->
-<div class="tab-pane" id="pane5">
-  <div class="plano-card">
-    <div class="plano-header">
-      <span class="plano-tag">Plano · 5 Meses</span>
-      <span class="plano-name">Starter</span>
-      <span class="plano-price">R$720</span>
-      <span class="plano-price-label">por mês</span>
-    </div>
-    <div class="plano-body">
-      <ul>
-        <li>Gestão do Instagram</li>
-        <li>12 posts por mês</li>
-        <li>Stories diários</li>
-        <li>Gestão do Meta Ads</li>
-        <li>Relatório mensal</li>
-        <li>Suporte via WhatsApp</li>
-      </ul>
-      <span class="economia-badge">Economia de R$1.200</span>
-    </div>
-  </div>
+        <div class="pc destaque">
+          <span class="pc-badge">Melhor custo-benefício</span>
+          <div class="pc-head">
+            <span class="pc-label">Plano</span>
+            <span class="pc-name">Profissional</span>
+            <div class="pc-price"><sup>R$</sup><big>1.440</big><span>/mês</span></div>
+            <span class="pc-total">Total: <strong>R$ 7.200</strong> em 5 meses</span>
+            <span class="pc-eco">↓ Economia de R$ 1.800</span>
+          </div>
+          <div class="pc-body">
+            <ul>
+              <li><span class="ok">✓</span>Gestão Instagram + TikTok</li>
+              <li><span class="ok">✓</span>20 posts por mês</li>
+              <li><span class="ok">✓</span>Stories diários + Reels semanais</li>
+              <li><span class="ok">✓</span>Meta Ads e Google Ads</li>
+              <li><span class="ok">✓</span>Estratégia de pacotes</li>
+              <li><span class="ok">✓</span>Separação restaurante e hotel</li>
+              <li><span class="ok">✓</span>Relatório semanal e mensal</li>
+              <li><span class="ok">✓</span>Reunião mensal de alinhamento</li>
+            </ul>
+          </div>
+        </div>
 
-  <div class="plano-card featured">
-    <span class="featured-badge">Recomendado</span>
-    <div class="plano-header">
-      <span class="plano-tag">Plano · 5 Meses</span>
-      <span class="plano-name">Profissional</span>
-      <span class="plano-price">R$1.440</span>
-      <span class="plano-price-label">por mês</span>
-    </div>
-    <div class="plano-body">
-      <ul>
-        <li>Gestão do Instagram + TikTok</li>
-        <li>20 posts por mês</li>
-        <li>Stories diários + Reels semanais</li>
-        <li>Gestão Meta Ads e Google Ads</li>
-        <li>Estratégia de pacotes e experiências</li>
-        <li>Separação restaurante e hotel</li>
-        <li>Relatório semanal e mensal</li>
-        <li>Reunião mensal de alinhamento</li>
-      </ul>
-      <span class="economia-badge">Economia de R$1.800</span>
-    </div>
-  </div>
+        <div class="pc">
+          <div class="pc-head">
+            <span class="pc-label">Plano</span>
+            <span class="pc-name">Premium</span>
+            <div class="pc-price"><sup>R$</sup><big>1.920</big><span>/mês</span></div>
+            <span class="pc-total">Total: <strong>R$ 9.600</strong> em 5 meses</span>
+            <span class="pc-eco">↓ Economia de R$ 2.400</span>
+          </div>
+          <div class="pc-body">
+            <ul>
+              <li><span class="ok">✓</span>Instagram + TikTok + YouTube</li>
+              <li><span class="ok">✓</span>Posts ilimitados</li>
+              <li><span class="ok">✓</span>Reels diários</li>
+              <li><span class="ok">✓</span>Meta Ads + Google Ads + remarketing</li>
+              <li><span class="ok">✓</span>Dois perfis: hotel e restaurante</li>
+              <li><span class="ok">✓</span>Dashboard em tempo real</li>
+              <li><span class="ok">✓</span>Reunião quinzenal</li>
+              <li><span class="ok">✓</span>Prioridade total no atendimento</li>
+            </ul>
+          </div>
+        </div>
+      </div>
 
-  <div class="plano-card">
-    <div class="plano-header">
-      <span class="plano-tag">Plano · 5 Meses</span>
-      <span class="plano-name">Premium</span>
-      <span class="plano-price">R$1.920</span>
-      <span class="plano-price-label">por mês</span>
-    </div>
-    <div class="plano-body">
-      <ul>
-        <li>Gestão Instagram + TikTok + YouTube</li>
-        <li>Posts ilimitados</li>
-        <li>Reels diários</li>
-        <li>Meta Ads + Google Ads + remarketing</li>
-        <li>Estratégia completa por temporada</li>
-        <li>Dois perfis: hotel e restaurante</li>
-        <li>Dashboard em tempo real</li>
-        <li>Reunião quinzenal de alinhamento</li>
-        <li>Prioridade total no atendimento</li>
-      </ul>
-      <span class="economia-badge">Economia de R$2.400</span>
-    </div>
-  </div>
-</div>
-
-<script>
-function showTab(tipo) {
-  document.getElementById('pane3').className = 'tab-pane' + (tipo==='3' ? ' active' : '');
-  document.getElementById('pane5').className = 'tab-pane' + (tipo==='5' ? ' active' : '');
-  document.getElementById('btn3').className = 'tab-btn ' + (tipo==='3' ? 'active' : 'inactive');
-  document.getElementById('btn5').className = 'tab-btn ' + (tipo==='5' ? 'active' : 'inactive');
-}
-</script>
+      <div class="comp">
+        <h3>Por que o plano de 5 meses faz mais sentido?</h3>
+        <p>Mesmos entregáveis, mesmo nível de dedicação. A diferença é que no plano de 5 meses você investe menos por mês e ainda tem tempo real para ver resultado.</p>
+        <table>
+          <thead>
+            <tr>
+              <th>Plano</th>
+              <th>3 meses/mês</th>
+              <th>5 meses/mês</th>
+              <th>Economia</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Starter</td>
+              <td>R$ 960</td>
+              <td>R$ 720</td>
+              <td class="eco">R$ 1.200</td>
+            </tr>
+            <tr>
+              <td>Profissional</td>
+              <td>R$ 1.800</td>
+              <td>R$ 1.440</td>
+              <td class="eco">R$ 1.800</td>
+            </tr>
+            <tr>
+              <td>Premium</td>
+              <td>R$ 2.400</td>
+              <td>R$ 1.920</td>
+              <td class="eco">R$ 2.400</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </div>
   </div>
 </div>
 
 <!-- ROI -->
-<div class="roi">
-  <div class="roi-inner">
-    <div class="roi-left">
-      <div class="section-eyebrow">O retorno do investimento</div>
-      <h2 class="section-title">Por que isso faz<br><em>sentido financeiro</em></h2>
-      <p>O hotel fatura R$10 milhões por ano. Uma variação de 2% na ocupação da média temporada representa R$200.000 adicionais. O investimento em marketing é uma fração disso.</p>
-      <p>Além disso, cada reserva direta gerada pelo Instagram economiza a comissão do Booking, que fica entre 15% e 20% por reserva.</p>
-    </div>
-    <div class="roi-numbers">
-      <div class="roi-row">
-        <span class="roi-row-label">Faturamento anual atual</span>
-        <span class="roi-row-val">R$10.000.000</span>
+<div class="section section-white">
+  <div class="inner">
+    <span class="eyebrow">O retorno do investimento</span>
+    <h2>Por que isso faz<br><em>sentido financeiro</em></h2>
+    <div class="rule"></div>
+    <div class="roi-grid">
+      <div class="roi-text">
+        <p>O hotel fatura R$10 milhões por ano. Uma variação de 2% na ocupação da média temporada representa R$200.000 adicionais. O investimento em marketing é uma fração disso.</p>
+        <p>Além disso, cada reserva direta gerada pelo Instagram economiza a comissão do Booking, que fica entre 15% e 20% por reserva.</p>
       </div>
-      <div class="roi-row">
-        <span class="roi-row-label">Investimento anual no plano Profissional</span>
-        <span class="roi-row-val">R$21.600</span>
-      </div>
-      <div class="roi-row">
-        <span class="roi-row-label">Economia de comissão Booking (10 reservas/mês)</span>
-        <span class="roi-row-val">R$28.350/ano</span>
-      </div>
-      <div class="roi-row">
-        <span class="roi-row-label">Aumento de 2% na ocupação média temporada</span>
-        <span class="roi-row-val">+R$200.000/ano</span>
-      </div>
-      <div class="roi-row total">
-        <span class="roi-row-label">Potencial de retorno anual</span>
-        <span class="roi-row-val">R$228.350</span>
+      <div class="roi-rows">
+        <div class="roi-row">
+          <span>Faturamento anual atual</span>
+          <span>R$10.000.000</span>
+        </div>
+        <div class="roi-row">
+          <span>Investimento anual Profissional</span>
+          <span>R$21.600</span>
+        </div>
+        <div class="roi-row">
+          <span>Economia de comissão Booking/ano</span>
+          <span>R$28.350</span>
+        </div>
+        <div class="roi-row">
+          <span>Aumento de 2% na ocupação média</span>
+          <span>+R$200.000</span>
+        </div>
+        <div class="roi-row total">
+          <span>Potencial de retorno anual</span>
+          <span>R$228.350</span>
+        </div>
       </div>
     </div>
   </div>
@@ -1128,35 +1056,46 @@ function showTab(tipo) {
 <!-- PROOF -->
 <div class="proof">
   <div class="proof-inner">
-    <div class="proof-box">
-      <span class="proof-val">725</span>
-      <span class="proof-label">Contatos gerados para pousada da região</span>
-    </div>
-    <div class="proof-box">
-      <span class="proof-val">R$900</span>
-      <span class="proof-label">Investimento total em tráfego pago</span>
-    </div>
-    <div class="proof-msg">
-      <p>"Menos de R$1,25 por contato interessado em reservar. Com a verba e o porte do Sete Ilhas, o potencial de resultado é proporcionalmente maior."</p>
+    <span class="eyebrow">Resultado comprovado na região</span>
+    <h2>O que já foi gerado com<br><em>menos de R$900 investidos</em></h2>
+    <div class="proof-grid">
+      <div class="pbox">
+        <big>725</big>
+        <span>Contatos de potenciais hóspedes gerados</span>
+      </div>
+      <div class="pbox">
+        <big>R$1,25</big>
+        <span>Custo por contato interessado em reservar</span>
+      </div>
+      <div class="proof-quote">
+        <p>"Menos de R$1,25 por contato interessado em reservar. Com a verba e o porte do Sete Ilhas, o potencial de resultado é proporcionalmente muito maior."</p>
+      </div>
     </div>
   </div>
 </div>
 
 <!-- CTA -->
 <div class="cta">
-  <div class="cta-inner">
-    <h2 class="cta-title">Pronto para começar?</h2>
-    <p class="cta-body">Qualquer dúvida sobre os planos ou sobre o que foi apresentado, estou à disposição.</p>
-    <a href="https://wa.me/5555991011436" class="cta-btn">Falar com Pedro Munareto</a>
-    <p class="cta-note">Pedro Munareto · (55) 99101-1436</p>
-  </div>
+  <h2>Pronto para <em>começar?</em></h2>
+  <p>Qualquer dúvida sobre os planos ou sobre o que foi apresentado, estou à disposição.</p>
+  <a href="https://wa.me/5555991011436" class="cta-btn">Falar com Pedro Munareto</a>
+  <small>Pedro Munareto · (55) 99101-1436</small>
 </div>
 
 <!-- FOOTER -->
 <footer>
-  <div class="f-l">Proposta elaborada por <span>Pedro Munareto</span> · Gestor de Instagram e Tráfego Pago</div>
-  <div class="f-r">Exclusivo para Hotel Sete Ilhas · Jurerê Internacional · Florianópolis SC</div>
+  <span>Proposta elaborada por <b>Pedro Munareto</b> · Gestor de Instagram e Tráfego Pago</span>
+  <span>Exclusivo para Hotel Sete Ilhas · Jurerê Internacional · Florianópolis SC</span>
 </footer>
+
+<script>
+function trocarAba(aba) {
+  document.getElementById('p3').className = 'pane' + (aba === '3' ? ' show' : '');
+  document.getElementById('p5').className = 'pane' + (aba === '5' ? ' show' : '');
+  document.getElementById('btn3').className = 'tab-btn ' + (aba === '3' ? 'on' : 'off');
+  document.getElementById('btn5').className = 'tab-btn ' + (aba === '5' ? 'on' : 'off');
+}
+</script>
 
 </body>
 </html>
